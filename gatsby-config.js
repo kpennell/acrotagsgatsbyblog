@@ -51,13 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/images`,
-        name: 'images',
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -69,7 +62,6 @@ module.exports = {
         
       },
     },
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
