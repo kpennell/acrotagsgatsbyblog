@@ -14,7 +14,7 @@ module.exports = {
       options: {
         nodeType: "item",
         imagePath: "thumbnail", // Use the 'original' sized image, just in case they get shown in a 10k monitor,
-        name: 'thumbnail',
+        name: 'optimized_thumbnail',
       }
     },
 

@@ -66,9 +66,9 @@ export const query = graphql`
           id
           move
           videoUrl
-          thumbnail {
+          optimized_thumbnail {
             childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 300) {
+              fluid(maxHeight: 150) {
                 ...GatsbyImageSharpFluid
               }
             }

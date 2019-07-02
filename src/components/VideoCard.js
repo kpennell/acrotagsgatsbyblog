@@ -65,7 +65,7 @@ function VideoCard(props) {
       
           <Img
           alt={`Picture of ${item.node.title}`}
-          fluid={item.node.thumbnail.childImageSharp.fluid}
+          fluid={item.node.optimized_thumbnail.childImageSharp.fluid}
         />
         </Link>
         <CardContent className={classes.cardContent}>
