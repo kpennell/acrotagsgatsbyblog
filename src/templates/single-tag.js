@@ -84,7 +84,13 @@ export const tagPageQuery = graphql`
           id
           move
           videoUrl
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           title
           tags
           level

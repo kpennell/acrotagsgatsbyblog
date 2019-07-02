@@ -1,39 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `appendTo`,
-    description: "hi",
-    author: `@gatsbyjs`,
+    title: `AcroTags`,
+    description: "Demo site for Gatsby AcroTags Blog",
+    author: `Kyle Pennell`,
   },
   plugins: [
+
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-            
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-remote-images",
+      options: {
+        nodeType: "item",
+        imagePath: "thumbnail", // Use the 'original' sized image, just in case they get shown in a 10k monitor,
+        name: 'thumbnail',
+      }
+    },
 
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

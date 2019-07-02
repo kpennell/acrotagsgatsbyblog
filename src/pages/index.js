@@ -5,14 +5,8 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import { withStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import VideoCard from "../components/VideoCard"
+import Img from "gatsby-image"
 
-function TabContainer({ children, dir }) {
-  return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
-  )
-}
 
 const styles = theme => ({
   root: {
@@ -50,10 +44,10 @@ class IndexPage extends React.Component {
         <SEO title="AcroTags" />
         <div className={classes.root}>
           <div className={classes.flexBoxParentDiv}>
-            {items.map(item => (
-              <div>
-                <VideoCard item={item} />
-              </div>
+            {items.map((item, index) => (
+           
+                <VideoCard key={index} item={item} />
+          
             ))}
           </div>
         </div>
@@ -72,7 +66,13 @@ export const query = graphql`
           id
           move
           videoUrl
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 300) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           title
           tags
           level

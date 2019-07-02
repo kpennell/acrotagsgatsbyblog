@@ -10,6 +10,8 @@ import Link from "gatsby-link"
 import Label from "@material-ui/icons/Label"
 import Avatar from "@material-ui/core/Avatar"
 
+import Img from 'gatsby-image'
+
 import { kebabCase } from "lodash"
 
 const styles = {
@@ -46,6 +48,12 @@ const styles = {
 function VideoCard(props) {
   const { classes, item } = props
 
+
+  console.log(item)
+
+  //     <CardMedia className={classes.media} image={item.node.thumbnail} />
+
+
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -54,7 +62,11 @@ function VideoCard(props) {
           style={{ textDecoration: "none" }}
           to={`/video/${kebabCase(item.node.title)}/`}
         >
-          <CardMedia className={classes.media} image={item.node.thumbnail} />
+      
+          <Img
+          alt={`Picture of ${item.node.title}`}
+          fluid={item.node.thumbnail.childImageSharp.fluid}
+        />
         </Link>
         <CardContent className={classes.cardContent}>
           <Link

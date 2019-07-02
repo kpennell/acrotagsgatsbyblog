@@ -15,6 +15,8 @@ import Button from "@material-ui/core/Button"
 import Chip from "@material-ui/core/Chip"
 import Typography from "@material-ui/core/Typography"
 
+
+
 import Label from "@material-ui/icons/Label"
 import Avatar from "@material-ui/core/Avatar"
 
@@ -133,7 +135,13 @@ export const ItemPageQuery = graphql`
       id
       move
       videoUrl
-      thumbnail
+      thumbnail {
+        childImageSharp {
+          fluid(maxWidth: 400, maxHeight: 250) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       title
       tags
       level
