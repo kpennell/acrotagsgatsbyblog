@@ -42,6 +42,8 @@ const styles = theme => ({
 const InstructorPage = ({ data, classes, pageContext }) => {
   const itemsWithInstructor = data.allItem.edges
 
+  console.log(itemsWithInstructor[0].node)
+
   return (
     <Layout>
       <div className={classes.root}>
@@ -51,7 +53,7 @@ const InstructorPage = ({ data, classes, pageContext }) => {
             avatar={
               <Avatar
                 alt="Instructor image"
-                src={itemsWithInstructor[0].node.instructor_image}
+                src={itemsWithInstructor[0].node.optimized_instructor_image.childImageSharp.fluid.src}
               />
             }
             label={pageContext.instructor}
