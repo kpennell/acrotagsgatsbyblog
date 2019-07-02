@@ -77,7 +77,13 @@ export const query = graphql`
           tags
           level
           instructor
-          instructor_image
+          optimized_instructor_image {
+            childImageSharp {
+              fluid(maxHeight: 70) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

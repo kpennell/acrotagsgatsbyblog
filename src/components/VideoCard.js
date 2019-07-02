@@ -48,12 +48,6 @@ const styles = {
 function VideoCard(props) {
   const { classes, item } = props
 
-
-  console.log(item)
-
-  //     <CardMedia className={classes.media} image={item.node.thumbnail} />
-
-
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -86,7 +80,7 @@ function VideoCard(props) {
               avatar={
                 <Avatar
                   alt="Instructor image"
-                  src={item.node.instructor_image}
+                  src={item.node.optimized_instructor_image.childImageSharp.fluid.src}
                 />
               }
               label={item.node.instructor}

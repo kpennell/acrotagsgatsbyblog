@@ -38,6 +38,8 @@ const styles = {
 function InstructorCard(props) {
   const { classes, item } = props
 
+  //console.log(item);
+
   return (
     <Card className={classes.card}>
       <Link
@@ -60,7 +62,7 @@ function InstructorCard(props) {
             avatar={
               <Avatar
                 alt="Instructor image"
-                src={item.instructor_image}
+                src={item.optimized_instructor_image.childImageSharp.fluid.src}
                 className={classes.instructorAvatar}
               />
             }

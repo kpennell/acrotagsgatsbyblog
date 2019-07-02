@@ -96,7 +96,7 @@ const ItemPage = ({ data, classes }) => {
             >
               <Chip
                 avatar={
-                  <Avatar alt="Instructor image" src={item.instructor_image} />
+                  <Avatar alt="Instructor image" src={item.optimized_instructor_image.childImageSharp.fluid.src} />
                 }
                 label={item.instructor}
                 variant="outlined"
@@ -146,7 +146,13 @@ export const ItemPageQuery = graphql`
       tags
       level
       instructor
-      instructor_image
+      optimized_instructor_image {
+        childImageSharp {
+          fluid(maxHeight: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 `

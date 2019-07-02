@@ -17,7 +17,14 @@ module.exports = {
         name: 'optimized_thumbnail',
       }
     },
-
+    {
+      resolve: "gatsby-plugin-remote-images",
+      options: {
+        nodeType: "item",
+        imagePath: "instructor_image", // Use the 'original' sized image, just in case they get shown in a 10k monitor,
+        name: 'optimized_instructor_image',
+      }
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',

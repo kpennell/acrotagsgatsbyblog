@@ -96,7 +96,13 @@ export const tagPageQuery = graphql`
           level
           instructor
 
-          instructor_image
+          optimized_instructor_image {
+            childImageSharp {
+              fluid(maxHeight: 50) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

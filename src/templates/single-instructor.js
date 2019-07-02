@@ -61,8 +61,8 @@ const InstructorPage = ({ data, classes, pageContext }) => {
         </Typography>
 
         <div className={classes.flexBoxParentDiv}>
-          {itemsWithInstructor.map(item => (
-            <VideoCard item={item} />
+          {itemsWithInstructor.map((item, index) => (
+            <VideoCard item={item} key={index} />
           ))}
         </div>
       </div>
@@ -97,7 +97,13 @@ export const InstructorPageQuery = graphql`
           tags
           level
           instructor
-          instructor_image
+          optimized_instructor_image {
+            childImageSharp {
+              fluid(maxHeight: 50) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

@@ -43,7 +43,7 @@ class InstructorPage extends React.Component {
         map.set(item.node.instructor, true)
         uniqueInstructorsWithLengthAndImage.push({
           instructor: item.node.instructor,
-          instructor_image: item.node.instructor_image,
+          optimized_instructor_image: item.node.optimized_instructor_image,
           numberOfVideos: items.filter(
             innerItem => innerItem.node.instructor === item.node.instructor // check if instructor matches
           ).length,
@@ -56,8 +56,8 @@ class InstructorPage extends React.Component {
         <div className={classes.root}>
           <div className={classes.flexBoxParentDiv}>
             <div className={classes.flexBoxParentDiv}>
-              {uniqueInstructorsWithLengthAndImage.map(item => (
-                <InstructorCard item={item} />
+              {uniqueInstructorsWithLengthAndImage.map((item, index) => (
+                <InstructorCard item={item} key={index} />
               ))}
             </div>
           </div>
@@ -88,7 +88,13 @@ export const query = graphql`
           tags
           level
           instructor
-          instructor_image
+          optimized_instructor_image {
+            childImageSharp {
+              fluid(maxHeight: 50) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
