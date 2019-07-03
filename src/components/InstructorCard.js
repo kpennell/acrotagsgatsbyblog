@@ -7,13 +7,15 @@ import Link from "gatsby-link"
 import { kebabCase } from "lodash"
 import Avatar from "@material-ui/core/Avatar"
 import Chip from "@material-ui/core/Chip"
-
-
-const styles = {
+ 
+const styles = theme => ({
   card: {
     width: 300,
     margin: 10,
     borderRadius: 15,
+    [theme.breakpoints.down('sm')]: {
+      width:"42vw"
+    },
   },
   cardContent: {
     display: "flex",
@@ -26,14 +28,24 @@ const styles = {
   instructorAvatar: {
     width: 40,
     height: 40,
+    [theme.breakpoints.down('sm')]: {
+      width:25,
+      height:25
+    },
   },
   instructorChips: {
     marginLeft: 0,
     fontSize:"1.3rem",
     height:40,
     background: "none",
+    [theme.breakpoints.down('sm')]: {
+      height:25,
+      fontSize:"1rem"
+    
+
+    },
   },
-}
+})
 
 function InstructorCard(props) {
   const { classes, item } = props

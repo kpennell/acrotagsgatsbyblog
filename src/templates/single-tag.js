@@ -1,9 +1,7 @@
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
-
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-
 import Typography from "@material-ui/core/Typography"
 import VideoCard from "../components/VideoCard"
 import Chip from "@material-ui/core/Chip"

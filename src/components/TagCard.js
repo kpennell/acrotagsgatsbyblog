@@ -9,22 +9,29 @@ import { kebabCase } from "lodash"
 import Chip from "@material-ui/core/Chip"
 import Label from '@material-ui/icons/Label';
 
-const styles = {
+const styles = theme => ({
   card: {
     width: 240,
     margin: 10,
     borderRadius: 15,
+    [theme.breakpoints.down('sm')]: {
+      width:"42vw"
+    },
   },
   title: {
     fontSize: 14,
+
   },
   chipLabel:{
     color: "#c5c5c5",
   },
   tagChips:{
     fontSize:20,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 15,
+    },
   }
-}
+})
 
 function TagCard(props) {
   const { classes, tag } = props

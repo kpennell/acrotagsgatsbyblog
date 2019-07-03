@@ -14,13 +14,20 @@ import Img from 'gatsby-image'
 
 import { kebabCase } from "lodash"
 
-const styles = {
+const styles = theme => ({
   card: {
     width: 310,
     margin: 10,
+    [theme.breakpoints.down('sm')]: {
+      width: "98vw",
+    },
+
   },
   cardContent: {
     height: 230,
+    [theme.breakpoints.down('sm')]: {
+      height:180
+    },
   },
   media: {
     height: 170,
@@ -43,7 +50,7 @@ const styles = {
     marginTop: 5,
     background: "none",
   },
-}
+})
 
 function VideoCard(props) {
   const { classes, item } = props

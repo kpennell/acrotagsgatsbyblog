@@ -42,8 +42,6 @@ const styles = theme => ({
 const InstructorPage = ({ data, classes, pageContext }) => {
   const itemsWithInstructor = data.allItem.edges
 
-  console.log(itemsWithInstructor[0].node)
-
   return (
     <Layout>
       <div className={classes.root}>
