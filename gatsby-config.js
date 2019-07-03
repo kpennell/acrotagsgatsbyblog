@@ -13,7 +13,7 @@ module.exports = {
       resolve: "gatsby-plugin-remote-images",
       options: {
         nodeType: "item",
-        imagePath: "thumbnail", // Use the 'original' sized image, just in case they get shown in a 10k monitor,
+        imagePath: "thumbnail",
         name: 'optimized_thumbnail',
       }
     },
@@ -21,7 +21,7 @@ module.exports = {
       resolve: "gatsby-plugin-remote-images",
       options: {
         nodeType: "item",
-        imagePath: "instructor_image", // Use the 'original' sized image, just in case they get shown in a 10k monitor,
+        imagePath: "instructor_image", 
         name: 'optimized_instructor_image',
       }
     },

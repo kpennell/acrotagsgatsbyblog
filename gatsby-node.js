@@ -116,8 +116,6 @@ exports.sourceNodes = async ({
     rows.push(rowObject)
   }
 
-  console.log(rows);
-
   let itemsArrayWithTagsArray = rows.map(function(item) {
     item.tags = item.tags.split(",").map(item => item.trim())
     item = { ...item }
