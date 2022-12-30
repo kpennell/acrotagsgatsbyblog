@@ -8,7 +8,7 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "axios": "^0.19.0",
-    "gatsby": "^2.3.24",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-material-ui": "^1.2.4",
